@@ -1,5 +1,14 @@
-rmarkdown::render('../dcnrota/published_rota.Rmd')
+# rmarkdown::render('../dcnrota/published_rota.Rmd')
+
+x %>% color_rota(specific_start_date = today()-7,
+                 publish_until = dmy('16022025'),
+                 weeks_ahead = 20) %>%
+  scroll_box(width = "100%", height = "500px") %>%
+  save_kable(file = "../dcnrota/published_rota.html", self_contained = T)
+
 #browseURL("../dcnrota/published_rota.html")
+#%>% scroll_box(width = "100%", height = "1000px")
+
 library(usethis)
 system("./encrypt.sh")
 git_comment = glue::glue("update rota {lubridate::today()}")
