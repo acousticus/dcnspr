@@ -1,7 +1,7 @@
 # rmarkdown::render('../dcnrota/published_rota.Rmd')
 
 x %>% color_rota(specific_start_date = today()-7,
-                 publish_until = dmy('17082025'),
+                 publish_until = dmy('15022026'),
                  weeks_ahead = 30) %>%
   scroll_box(width = "100%", height = "500px") %>%
   save_kable(file = "../dcnrota/published_rota.html", self_contained = T)
